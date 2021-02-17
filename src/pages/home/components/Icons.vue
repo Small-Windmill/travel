@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -55,6 +55,9 @@ export default {
         imgUrl: 'http://img1.qunarzz.com/piao/fusion/1611/a9/ffc620dbda9b9c02.png',
         desc: '一日游',
       }],
+      swiperOption: {
+        autoplay: false,
+      },
     };
   },
   computed: {
@@ -79,40 +82,44 @@ export default {
   padding-bottom: 50%;
 }
 
-.icon {
-  position: relative;
-  overflow: hidden;
-  float: left;
-  width: 25%;
-  padding-bottom: 25%;
+.icons {
+  margin-top: 0.1rem;
 
-  .icon-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0.44rem;
-    box-sizing: border-box;
-    padding: 0.1rem;
+  .icon {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 25%;
+    padding-bottom: 25%;
 
-    .icon-img-content {
-      display: block;
-      height: 100%;
-      margin: 0 auto;
+    .icon-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0.44rem;
+      box-sizing: border-box;
+      padding: 0.1rem;
+
+      .icon-img-content {
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+      }
     }
-  }
 
-  .icon-desc {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 0.44rem;
-    line-height: 0.44rem;
-    text-align: center;
-    color: $darkTextColor;
+    .icon-desc {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 0.44rem;
+      line-height: 0.44rem;
+      text-align: center;
+      color: $darkTextColor;
 
-    @include ellipsis();
+      @include ellipsis();
+    }
   }
 }
 </style>

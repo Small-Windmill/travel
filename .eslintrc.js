@@ -13,6 +13,7 @@ module.exports = {
     rules: {
         'no-console': 'off',
         'no-debugger': 'off',
-        'linebreak-style': 'off'
+        'linebreak-style': 'off',
+        'max-len' : ["error", {code : 300}] // 此处为具体添加代码
     },
 };

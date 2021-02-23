@@ -20,4 +20,13 @@ module.exports = {
       },
     },
   },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        // eslint-disable-next-line key-spacing
+        // eslint-disable-next-line quote-props
+        'common': '@/common',
+      },
+    },
+  },
 };
